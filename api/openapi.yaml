@@ -135,6 +135,7 @@ components:
         pduration: pduration
         pdescription: pdescription
         pimage: pimage
+        pwebsite: pwebsite
         pabstract: pabstract
         ptitle: ptitle
         _id: _id
@@ -160,6 +161,8 @@ components:
           type: string
         pga:
           type: string
+        pwebsite:
+          type: string
       required:
       - pabstract
       - pdescription
@@ -169,4 +172,5 @@ components:
       - pimage
       - pstart
       - ptitle
+      - pwebsite
       type: object

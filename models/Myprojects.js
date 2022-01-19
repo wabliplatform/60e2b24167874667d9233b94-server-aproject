@@ -18,7 +18,9 @@ pabstract:String ,
 
 pdescription:String , 
 
-pga:String 
+pga:String , 
+
+pwebsite:String 
 
 
 })

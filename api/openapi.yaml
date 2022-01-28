@@ -289,6 +289,7 @@ components:
         vpms: 1.4658129805029452
         tname: tname
         _id: _id
+        tdescription: tdescription
         edate: 6.027456183070403
       properties:
         _id:
@@ -304,9 +305,12 @@ components:
         vpms:
           format: double
           type: number
+        tdescription:
+          type: string
       required:
       - edate
       - sdate
+      - tdescription
       - tname
       - vpms
       type: object

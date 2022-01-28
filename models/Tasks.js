@@ -10,7 +10,9 @@ sdate:Number ,
 
 edate:Number , 
 
-vpms:Number 
+vpms:Number , 
+
+tdescription:String 
 
 
 })

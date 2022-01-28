@@ -20,6 +20,8 @@ security:
 tags:
 - description: not yet ready
   name: myprojects
+- description: not yet ready
+  name: tasks
 paths:
   /myprojects:
     post:
@@ -128,6 +130,113 @@ paths:
       - myprojects
       x-method-getAll: "true"
       x-eov-operation-handler: controllers/MyprojectsController
+  /tasks:
+    post:
+      operationId: createtasks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tasks'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tasks'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - tasks
+      x-eov-operation-handler: controllers/TasksController
+  /tasks/{tasksId}:
+    delete:
+      operationId: deletetasks
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: tasksId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - tasks
+      x-eov-operation-handler: controllers/TasksController
+    get:
+      operationId: gettasks
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: tasksId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tasks'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - tasks
+      x-eov-operation-handler: controllers/TasksController
+    put:
+      operationId: updatetasks
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: tasksId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tasks'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tasks'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - tasks
+      x-eov-operation-handler: controllers/TasksController
+  /tasks/getAll:
+    get:
+      operationId: getAlltasks
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/tasks'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - tasks
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/TasksController
 components:
   schemas:
     myprojects:
@@ -173,4 +282,31 @@ components:
       - pstart
       - ptitle
       - pwebsite
+      type: object
+    tasks:
+      example:
+        sdate: 0.8008281904610115
+        vpms: 1.4658129805029452
+        tname: tname
+        _id: _id
+        edate: 6.027456183070403
+      properties:
+        _id:
+          type: string
+        tname:
+          type: string
+        sdate:
+          format: double
+          type: number
+        edate:
+          format: double
+          type: number
+        vpms:
+          format: double
+          type: number
+      required:
+      - edate
+      - sdate
+      - tname
+      - vpms
       type: object

@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const tasksSchema = new Schema({
 Underscoreid:String , 
 
+tname:String , 
+
 sdate:Number , 
 
 edate:Number , 
-
-tname:String , 
 
 vpms:Number , 
 

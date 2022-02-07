@@ -296,14 +296,14 @@ components:
       properties:
         _id:
           type: string
+        tname:
+          type: string
         sdate:
           format: double
           type: number
         edate:
           format: double
           type: number
-        tname:
-          type: string
         vpms:
           format: double
           type: number

@@ -4,8 +4,12 @@ const Schema = mongoose.Schema;
 const myprojectsSchema = new Schema({
 Underscoreid:String , 
 
-pimage:String , 
 
+pimage:
+{
+type: Schema.Types.ObjectId,
+ref:'myprojects_pimage'
+} , 
 ptitle:String , 
 
 pstart:String , 

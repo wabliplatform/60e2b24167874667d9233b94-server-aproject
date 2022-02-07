@@ -11,6 +11,7 @@ expressServer.js
 index.js
 logger.js
 models/Myprojects.js
+models/MyprojectsPimage.js
 models/Tasks.js
 models/index.js
 mongooseDB.js
